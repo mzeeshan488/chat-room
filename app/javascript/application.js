@@ -2,4 +2,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-import ".../application.scss"
+import '.javascript/stylesheets/application.scss'
+
+import "channels"
