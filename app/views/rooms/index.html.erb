@@ -32,11 +32,16 @@
             <span class="navbar-brand" href="#">
               <b><%= @room.name %></b>
               <% @room.messages.each do |message| %>
-              <p><%=message.content %></p>
+              <small><%= message.user.username %></small>-<p><%=message.content %> </p>
 
               <% end %>
             </span>
           </nav>
+           <div id="messages">
+            <% @room.messages.each do |message| %>
+              <%= render 'messages/message', message: message %>
+            <% end %>
+          </div>
          
           <div class="chat-box">
             <%= render 'messages/form', message: Message.new, room: @room %>
